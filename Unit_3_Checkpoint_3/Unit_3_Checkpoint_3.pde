@@ -1,4 +1,5 @@
-float sliderY;
+//change dia of circle
+float sliderY, dia;
 
 
 void setup(){
@@ -12,6 +13,8 @@ void draw(){
   background(255);
   line(300,100,300,500);
   square(275,sliderY,50);
+  circle(100,100,dia);
+  dia=map(sliderY,75,475,0,200);
 }
 
 void mouseDragged(){
