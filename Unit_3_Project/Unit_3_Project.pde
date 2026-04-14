@@ -1,8 +1,14 @@
-color darkBlue = #03045E;
-color oceanBlue = #0077b6;
+color red = #FF0000;
+color green = #00FF00;
 color cyan = #00b4d8;
-color lightBlue = #90e0ef;
-color paleBlue = #caf0f8;
+color blue = #0000FF;
+color pink = #FF00EF;
+color purple = #A500FF;
+color yellow = #FFFF00;
+color orange = #FF8400;
+color black = #000000;
+color white = #FFFFFF;
+color background = #fcf6bd;
 color selected;
 
 void setup(){
@@ -13,19 +19,48 @@ void setup(){
 }
 
 void draw(){
-  background(paleBlue);
+  background(background);
   
   button(150,500,50);
-  fill(lightBlue);
+  fill(red);
   circle(150,500,100);
   
   button(300,500,50);
-  fill(cyan);
+  fill(green);
   circle(300,500,100);
   
   button(450,500,50);
-  fill(oceanBlue);
+  fill(cyan);
   circle(450,500,100);
+  
+  button(150,500,50);
+  fill(blue);
+  circle(150,500,100);
+
+  button(450,500,50);
+  fill(pink);
+  circle(450,500,100);
+  
+  button(450,500,50);
+  fill(purple);
+  circle(450,500,100);
+  
+  button(450,500,50);
+  fill(yellow);
+  circle(450,500,100);
+  
+  button(450,500,50);
+  fill(orange);
+  circle(450,500,100);
+  
+  button(450,500,50);
+  fill(black);
+  circle(450,500,100);
+  
+  button(450,500,50);
+  fill(white);
+  circle(450,500,100);
+  
   
   fill(selected);
   stroke(darkBlue);
