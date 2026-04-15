@@ -63,7 +63,7 @@ void draw(){
   
   
   fill(selected);
-  stroke(darkBlue);
+  stroke(white);
   rect(100,50,400,350);
 }
 
