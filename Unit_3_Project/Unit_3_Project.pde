@@ -9,9 +9,13 @@ color orange = #FF8400;
 color black = #000000;
 color white = #FFFFFF;
 color background = #fcf6bd;
+color grey = #939393;
 color frame = #8b5e34;
 color selected;
 boolean back_ground;
+float sliderY, S;
+
+
 
 void setup(){
   background(background);
@@ -19,9 +23,11 @@ void setup(){
   strokeWeight(3);
   stroke(frame);
   selected=white;
+  sliderY=430;
 }
 
 void draw(){
+  strokeWeight(3);
   button(850,170,20);
   fill(red);
   circle(850,170,40);
@@ -63,6 +69,13 @@ void draw(){
   circle(790,290,40);
   
   //squareButton(
+  
+  strokeWeight(10);
+  stroke(grey);
+  line(820,330,820,530);
+  strokeWeight(5);
+  circle(820,sliderY,80);
+  S=map(sliderY,530,330,10,1);
   
   fill(selected);
   stroke(white);
@@ -120,5 +133,6 @@ void squareButton(float x1, float x2, float y1, float y2){
 }
 
 void mouseDragged(){
+  strokeWeight(S);
   line(pmouseX, pmouseY, mouseX, mouseY);
 }
