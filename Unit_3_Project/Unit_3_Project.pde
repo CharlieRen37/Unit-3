@@ -16,74 +16,109 @@ boolean back_ground;
 void setup(){
   background(background);
   size(900,900);
-  strokeWeight(5);
+  strokeWeight(3);
   stroke(frame);
   selected=white;
 }
 
 void draw(){
-  button(825,375,50);
+  button(850,170,20);
   fill(red);
-  circle(825,375,100);
+  circle(850,170,40);
   
-  button(675,375,50);
+  button(790,170,20);
   fill(green);
-  circle(675,375,100);
+  circle(790,170,40);
   
-  button(675,225,50);
+  button(790,110,20);
   fill(cyan);
-  circle(675,225,100);
+  circle(790,110,40);
   
-  button(675,75,50);
+  button(790,50,20);
   fill(blue);
-  circle(675,75,100);
+  circle(790,50,40);
 
-  button(825,225,50);
+  button(850,110,20);
   fill(pink);
-  circle(825,225,100);
+  circle(850,110,40);
   
-  button(825,75,50);
+  button(850,50,20);
   fill(purple);
-  circle(825,75,100);
+  circle(850,50,40);
   
-  button(825,675,50);
+  button(850,290,20);
   fill(yellow);
-  circle(825,675,100);
+  circle(850,290,40);
   
-  button(825,525,50);
+  button(850,230,20);
   fill(orange);
-  circle(825,525,100);
+  circle(850,230,40);
   
-  button(675,525,50);
+  button(790,230,20);
   fill(black);
-  circle(675,525,100);
+  circle(790,230,40);
   
-  button(675,675,50);
+  button(790,290,20);
   fill(white);
-  circle(675,675,100);
+  circle(790,290,40);
   
+  //squareButton(
   
   fill(selected);
   stroke(white);
-  rect(50,25,525,825);
+  rect(25,100,575,775);
 }
 
 void mouseReleased(){
-  if(dist(150,500,mouseX,mouseY)<=50){
-    //selected=lightBlue;
+  if(dist(790,50,mouseX,mouseY)<=20){
+    selected=blue;
   }
-  if(dist(300,500,mouseX,mouseY)<=50){
+  if(dist(790,110,mouseX,mouseY)<=20){
     selected=cyan;
   }
-  if(dist(450,500,mouseX,mouseY)<=50){
-    //selected=oceanBlue;
+  if(dist(850,110,mouseX,mouseY)<=20){
+    selected=pink;
+  }
+  if(dist(850,50,mouseX,mouseY)<=20){
+    selected=purple;
+  }
+  if(dist(850,290,mouseX,mouseY)<=20){
+    selected=yellow;
+  }
+  if(dist(850,230,mouseX,mouseY)<=20){
+    selected=orange;
+  }
+  if(dist(790,230,mouseX,mouseY)<=20){
+    selected=black;
+  }
+  if(dist(790,290,mouseX,mouseY)<=20){
+    selected=white;
+  }
+  if(dist(790,170,mouseX,mouseY)<=20){
+    selected=green;
+  }
+  if(dist(850,170,mouseX,mouseY)<=20){
+    selected=red;
   }
 }
 
-void button(int x,int y,int r){
+  
+void button(float x,float y,float r){
   if (dist(x,y,mouseX,mouseY)<=r){
     stroke(255);
   }else{
     stroke(frame);
   }
+}
+
+void squareButton(float x1, float x2, float y1, float y2){
+  if(mouseX>= x1 && mouseX <= x2 && mouseY >= y1 && mouseY <= y2){
+    stroke(255);
+  }else{
+    stroke(frame);
+  }
+}
+
+void mouseDragged(){
+  line(pmouseX, pmouseY, mouseX, mouseY);
 }
