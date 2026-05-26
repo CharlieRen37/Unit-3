@@ -82,6 +82,14 @@ void draw(){
   rect(25,100,575,775);
 }
 
+void sliderY(){
+  if (mouseX<900&&mouseX>740&&mouseY<530&&mouseY>330){
+    sliderY=mouseY;
+  }
+}
+
+
+
 void mouseReleased(){
   if(dist(790,50,mouseX,mouseY)<=20){
     selected=blue;
@@ -113,6 +121,7 @@ void mouseReleased(){
   if(dist(850,170,mouseX,mouseY)<=20){
     selected=red;
   }
+  sliderY();
 }
 
   
@@ -135,4 +144,5 @@ void squareButton(float x1, float x2, float y1, float y2){
 void mouseDragged(){
   strokeWeight(S);
   line(pmouseX, pmouseY, mouseX, mouseY);
+  sliderY();
 }
