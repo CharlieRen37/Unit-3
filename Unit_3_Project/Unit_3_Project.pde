@@ -1,3 +1,7 @@
+PImage butterfly, tung;
+
+
+
 color red = #FF0000;
 color green = #00FF00;
 color cyan = #00b4d8;
@@ -14,6 +18,7 @@ color frame = #8b5e34;
 color selected;
 boolean back_ground;
 float sliderY, S;
+int condition;
 
 
 
@@ -24,9 +29,17 @@ void setup(){
   stroke(frame);
   selected=white;
   sliderY=430;
+  noStroke();
+  fill(white);
+  rect(0,0,740,900);
+  butterfly = loadImage("butterfly.png");
+  tung = loadImage("Tung.png");
 }
 
 void draw(){
+  noStroke();
+  fill(background);
+  rect(740,0,160,900);
   strokeWeight(3);
   button(850,170,20);
   fill(red);
@@ -69,21 +82,23 @@ void draw(){
   circle(790,290,40);
   
   //squareButton(
+  noStroke();
+  fill(white);
+  rect(770,575,100,100);
+  image(butterfly, 770,575,100,100);
+  rect(770,700,100,100);
+  image(tung,770,700,100,100);
   
   strokeWeight(10);
   stroke(grey);
   line(820,330,820,530);
   strokeWeight(5);
-  circle(820,sliderY,80);
+  circle(820,sliderY,50);
   S=map(sliderY,530,330,10,1);
-  
-  fill(selected);
-  stroke(white);
-  rect(25,100,575,775);
 }
 
 void sliderY(){
-  if (mouseX<900&&mouseX>740&&mouseY<530&&mouseY>330){
+  if (mouseX<845&&mouseX>795&&mouseY<530&&mouseY>330){
     sliderY=mouseY;
   }
 }
@@ -142,7 +157,11 @@ void squareButton(float x1, float x2, float y1, float y2){
 }
 
 void mouseDragged(){
-  strokeWeight(S);
-  line(pmouseX, pmouseY, mouseX, mouseY);
-  sliderY();
+  if(mouseX<740){
+    stroke(selected);
+    strokeWeight(S);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }else{
+    sliderY();
+  }
 }
