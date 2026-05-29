@@ -1,4 +1,7 @@
 PImage butterfly, tung;
+//color and stroke indicator on knob and line
+//save, cleaar, load button
+//stamps
 
 
 
