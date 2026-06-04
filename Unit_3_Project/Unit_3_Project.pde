@@ -27,6 +27,7 @@ boolean tungOn;
 color square1;
 color square2;
 float scale;
+color resetOn,resetOff;
 
 void setup(){
   background(background);
@@ -109,7 +110,37 @@ void draw(){
   circle(820,sliderY,50);
   S=map(sliderY,530,330,1,30);
   scale=map(sliderY,530,330,1,400);
+  
+  //save
+  clear();
+  fill(resetOff);
+  rect(750,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("clear",770,850);
+  
+  clear();
+  fill(resetOff);
+  rect(750,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("clear",770,850);
+  
 }
+
+
+void clear(float x1, float x2,float y1,float y2){
+  if (mouseX<790&&mouseX>750&&mouseY<875&&mouseY>825){
+resetOff=white;
+resetOn=grey;
+  }else{
+resetOff=grey;
+resetOn=white;
+  }
+}
+
 
 void sliderY(){
   if (mouseX<845&&mouseX>795&&mouseY<530&&mouseY>330){
@@ -122,33 +153,73 @@ void sliderY(){
 void mouseReleased(){
   if(dist(790,50,mouseX,mouseY)<=20){
     selected=blue;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(790,110,mouseX,mouseY)<=20){
     selected=cyan;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(850,110,mouseX,mouseY)<=20){
     selected=pink;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(850,50,mouseX,mouseY)<=20){
     selected=purple;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(850,290,mouseX,mouseY)<=20){
     selected=yellow;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(850,230,mouseX,mouseY)<=20){
     selected=orange;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(790,230,mouseX,mouseY)<=20){
     selected=black;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(790,290,mouseX,mouseY)<=20){
     selected=white;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(790,170,mouseX,mouseY)<=20){
     selected=green;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   if(dist(850,170,mouseX,mouseY)<=20){
     selected=red;
+    flyOn=false;
+    tungOn=false;
+    square1=white;
+    square2=white;
   }
   sliderY();
   if (mouseX>770&&mouseX<870&&mouseY>575&&mouseY<675||mouseX>770&&mouseX<870&&mouseY>700&&mouseY<800){
@@ -183,6 +254,12 @@ void mouseReleased(){
   }
 }else{
   sliderY();
+}
+
+if (mouseX<790&&mouseX>750&&mouseY<875&&mouseY>825){
+  noStroke();
+  fill(white);
+  rect(0,0,740,900);
 }
 }
 
