@@ -111,8 +111,8 @@ void draw(){
   S=map(sliderY,530,330,1,30);
   scale=map(sliderY,530,330,1,400);
   
-  //save
-  clear();
+  //clear
+  clear(790,750,875,825);
   fill(resetOff);
   rect(750,825,40,50);
   textAlign(CENTER,CENTER);
@@ -120,19 +120,56 @@ void draw(){
   textSize(20);
   text("clear",770,850);
   
-  clear();
+  clear(790,750,875,825);
   fill(resetOff);
   rect(750,825,40,50);
   textAlign(CENTER,CENTER);
   fill(resetOn);
   textSize(20);
   text("clear",770,850);
+  
+  //save
+  clear(890,850,875,825);
+  fill(resetOff);
+  rect(850,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("save",870,850);
+  
+  clear(890,850,875,825);
+  fill(resetOff);
+  rect(850,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("save",870,850);
+  
+  //load
+  clear(840,800,875,825);
+  fill(resetOff);
+  rect(800,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("load",820,850);
+  
+  clear(840,800,875,825);
+  fill(resetOff);
+  rect(800,825,40,50);
+  textAlign(CENTER,CENTER);
+  fill(resetOn);
+  textSize(20);
+  text("load",820,850);
+  
+  
+  
   
 }
 
 
 void clear(float x1, float x2,float y1,float y2){
-  if (mouseX<790&&mouseX>750&&mouseY<875&&mouseY>825){
+  if (mouseX<x1&&mouseX>x2&&mouseY<y1&&mouseY>y2){
 resetOff=white;
 resetOn=grey;
   }else{
@@ -256,11 +293,32 @@ void mouseReleased(){
   sliderY();
 }
 
+//clear
 if (mouseX<790&&mouseX>750&&mouseY<875&&mouseY>825){
   noStroke();
   fill(white);
   rect(0,0,740,900);
 }
+
+//save
+if (mouseX<890&&mouseX>850&&mouseY<875&&mouseY>825){
+//
+//
+//
+//
+//
+}
+
+//load
+if (mouseX<840&&mouseX>800&&mouseY<875&&mouseY>825){
+//
+//
+//
+//
+//
+//
+}
+
 }
 
   
