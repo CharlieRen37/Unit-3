@@ -302,23 +302,44 @@ if (mouseX<790&&mouseX>750&&mouseY<875&&mouseY>825){
 
 //save
 if (mouseX<890&&mouseX>850&&mouseY<875&&mouseY>825){
-//
-//
-//
-//
-//
+  selectOutput("Choose a name for your new image file", "saveImage");
 }
+//
+//
+//
+//
+//
 
 //load
 if (mouseX<840&&mouseX>800&&mouseY<875&&mouseY>825){
+  selectInput("Pick an image to load", "openImage");
+}
+  //
 //
 //
 //
 //
 //
-//
+
+
 }
 
+void saveImage(File f){
+  if(f !=null){
+    PImage canvas= get(0,0,740,900);
+    canvas.save(f.getAbsolutePath());
+  }
+}
+
+void openImage(File f){
+  if (f!=null){
+    int n=0;
+    while (n<100){
+      PImage pic = loadImage(f.getPath());
+      image(pic,0,0);
+      n=n+1;
+    }
+  }
 }
 
   
